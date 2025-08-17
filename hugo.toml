@@ -1,0 +1,41 @@
+baseURL = 'https://yoa-lab.github.io/young-admin.org.ru/'
+languageCode = 'ru-RU'
+title = 'Young Admin'
+theme = "hugo-blog-awesome"
+enableEmoji = true
+
+[params]
+  description = "Трелалело тралала"
+  toc = true
+  tocLevels = 6
+  goToTop = true
+  showTagsInPost = true
+  Subtitle = "Hugo is Absurdly Fast!"
+  
+  [params.author]
+    name = "Young Admin"
+	bio = "Sdkjh kasjhdk sajhdlas kjdh"
+  
+  [[params.socialIcons]]
+    name = "Rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    name = "Главная"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Теги"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    name = "Посты"
+    url = "/posts/"
+    weight = 3
+	
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = true
