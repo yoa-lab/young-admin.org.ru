@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Servera on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/servera/</link><description>Recent content in Servera on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Mon, 16 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/servera/index.xml" rel="self" type="application/rss+xml"/><item><title>Ускорение архивирования бэкапов</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/10/uskorenie-arhivirovaniya-bekapov/</link><pubDate>Mon, 16 Oct 2023 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/10/uskorenie-arhivirovaniya-bekapov/</guid><description>&lt;p>Создание бэкапов с помощью tar.gz начало занимать очень много времени, так как оно использует только одно ядро процессора. Чтобы ускорить этот процесс, можно воспользоваться архиватором pigz. Это многопоточная реализация gzip, как написано на &lt;a href="https://zlib.net/pigz/">сайте&lt;/a> &amp;ldquo;полно-функциональная замена gzip&amp;rdquo;, что должно давать полную совместимость.&lt;/p>
+&lt;p>Допустим у нас есть некий bash скрипт (или иное) бэкапа, файлов, базы данных и другого на сервере. Чтобы работать с pigz, нужно для начала установить. Он есть в официальных репозиториях, дополнительно ничего подключать не нужно:&lt;/p></description></item><item><title>Простая установка Wireguard VPN на сервер и клиент</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</guid><description>&lt;p>В статье будет рассмотрена установка и настройка Wireguard VPN. Можно использовать для установки соединения между клиентом (например телефон) и сервером, например для работы во внутренней сети, рабочих целей, настраивать будем на собственном сервере Linux.&lt;/p>
+&lt;p>В качестве рекомендации, можно выбрать подобного &lt;a href="https://aeza.net/?ref=364032">хостинг провайдера&lt;/a>.&lt;/p>
+&lt;h2 id="арендуем-сервер">Арендуем сервер&lt;/h2>
+&lt;p>Можно арендавать небольшой VPS сервер на KVM, &lt;strong>так как OpenVZ НЕ ПОДДЕРЖИВАЕТСЯ&lt;/strong>.&lt;br>
+Я использовал для тестов следующий сервер:&lt;br>
+- 1 vCPU&lt;br>
+- 8GB RAM&lt;br>
+- 20GB Storage&lt;br>
+- 100 Mbit/s - безлимитный трафик&lt;br>
+- Debian 11&lt;/p></description></item><item><title>info.php выводит код вместо информации</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/08/info-php-vyvodit-kod-vmesto-informaczii/</link><pubDate>Thu, 26 Aug 2021 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/08/info-php-vyvodit-kod-vmesto-informaczii/</guid><description>&lt;p>После установки PHP 8 и Apache2 на сервере с Debian 10, я хотел вывести информацию о текущей конфигурации и в целом проверить работоспособность. Перейдя по адресу (ip_адрес_сервера/info.php) я увидел:&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>&lt;a href="https://young-admin.org.ru/wp-content/uploads/2021/08/info_php.png">&lt;img src="images/info_php.png" alt="">&lt;/a>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Код info.php&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>Всё оказалось очень просто, модуль PHP8.0 не был включен в Apache2.
+Проверив путь /etc/apache2/mods-available, что модуль есть, набираем в консоли команду активации модуля:&lt;/p></description></item></channel></rss>

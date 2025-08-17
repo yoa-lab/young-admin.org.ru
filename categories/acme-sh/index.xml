@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Acme-Sh on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/acme-sh/</link><description>Recent content in Acme-Sh on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/acme-sh/index.xml" rel="self" type="application/rss+xml"/><item><title>Acme.sh вопросы &amp; ответы</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</link><pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</guid><description>&lt;p>Данные ответы можно найти также в &lt;a href="https://github.com/acmesh-official/acme.sh/wiki">официальной документации&lt;/a>.&lt;/p>
+&lt;h2 id="как-удалить-сертификат-из-списка-обновляемых">Как удалить сертификат из списка обновляемых&lt;/h2>
+&lt;p>Пример - удалили сайт с сервера, сменили домен (а старый не нужен), acme.sh продолжает пытаться выпустить сертификат для сайта и ещё и уведомления каждую ночь шлёт об ошибке, если &lt;a href="#">вы их настроили&lt;/a>.&lt;/p>
+&lt;p>Чтобы остановить это, надо сделать следующее, заходим в консоль сервера, далее в каталог с acme.sh, и выполняем следующую команду:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>acme.sh --remove -d example.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>acme.sh - Вызываем сам acme.sh скрипт&lt;/li>
+&lt;li>- - remove - команда удаления сертификата из списка сертификатов, известных acme.sh.&lt;/li>
+&lt;li>-d - ключ для указания домена, в примере это домен - example.com&lt;/li>
+&lt;/ul>
+&lt;h2 id="смена-центра-сертификации">Смена центра сертификации&lt;/h2>
+&lt;p>Пример - ZeroSSSL больше не выпускает сертификаты для .RU доменной зоны (при запросе выходит ошибка), а Lets Encrypt выпускает.&lt;/p></description></item></channel></rss>

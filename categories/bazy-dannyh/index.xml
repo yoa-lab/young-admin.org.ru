@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Bazy-Dannyh on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/bazy-dannyh/</link><description>Recent content in Bazy-Dannyh on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/bazy-dannyh/index.xml" rel="self" type="application/rss+xml"/><item><title>Как добавить пользователя БД с возможностью выборки - phpMyAdmin</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/08/kak-dobavit-polzovatelya-bd-cherez-phpmyadmin/</link><pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/08/kak-dobavit-polzovatelya-bd-cherez-phpmyadmin/</guid><description>&lt;p>Добавляем пользователя базы данных и предоставляем доступ к некоторым таблицам БД, с возможностью, только выборки(select).&lt;br>
+Вся настройка происходила под root пользователем базы данных, в phpMyAdmin.&lt;/p>
+&lt;h5 id="алёрт">Алёрт&lt;/h5>
+&lt;p>Если знаете как лучше реализовать, сделать или заметили ошибки - &lt;strong>срочно&lt;/strong> пишите комментарий!&lt;/p>
+&lt;p>1. Заходим в phpMyAdmin, стандартный путь это ip адрес или домен, например:&lt;br>
+http://192.168.1.10/phpmyadmin/index.php&lt;br>
+&lt;a href="http://example.com/phpmyadmin/index.php">http://example.com/phpmyadmin/index.php&lt;/a>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>&lt;a href="https://young-admin.org.ru/wp-content/uploads/2021/08/screen_phpmyadmin.png">&lt;img src="images/screen_phpmyadmin-1024x413.png" alt="">&lt;/a>&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;p>Главная phpMyAdmin&lt;/p>
+&lt;!-- raw HTML omitted -->
+&lt;!-- raw HTML omitted -->
+&lt;p>2. Переходим на верхней панели в &amp;ldquo;Пользователи&amp;rdquo;&lt;br>
+3. Добавляем нового пользователя, с нужными нам параметрами. В примере, имя пользователя я указал test, хост локальный (localhost), пароль - без пароля.&lt;/p></description></item></channel></rss>

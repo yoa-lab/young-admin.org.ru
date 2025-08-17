@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nginx on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/nginx/</link><description>Recent content in Nginx on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/nginx/index.xml" rel="self" type="application/rss+xml"/><item><title>Nginx команды</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/06/nginx-komandy/</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/06/nginx-komandy/</guid><description>&lt;h2 id="узнать-версию-nginx">Узнать версию Nginx&lt;/h2>
+&lt;p>Чтобы узнать только, версию Nginx:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Узнать версию Nginx, версию компилятора и параметры установленной конфигурации.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="проверка-конфигурации">Проверка конфигурации&lt;/h2>
+&lt;p>Чтобы проверить правильность синтаксиса конфигурационных файлов:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -t
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="отправка-сигналов-для-запуска-остановки-и-перезагрузки-конфигурации">Отправка сигналов для запуска, остановки и перезагрузки конфигурации&lt;/h2>
+&lt;p>Перезагрузка конфигурационного файла:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -s reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

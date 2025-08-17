@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mikrotik on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/mikrotik/</link><description>Recent content in Mikrotik on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/mikrotik/index.xml" rel="self" type="application/rss+xml"/><item><title>Массовое удаление Declined, Conflict lease Mikrotik</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</link><pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</guid><description>&lt;p>На mikrtoik массово завиcли клиенты в статусе conflict и declined. У меня lease-time несколько суток, чтобы ошибочные долго не весели, решил удалить их сразу после исправления ошибки из-за которой они появились.&lt;/p>
+&lt;p>Команда для терминала mikrotik&amp;rsquo;а, чтобы массово удалить:&lt;/p>
+&lt;pre tabindex="0">&lt;code>/ip dhcp-server lease remove [find status=declined]
+/ip dhcp-server lease remove [find status=conflict]
+&lt;/code>&lt;/pre></description></item><item><title>Скрипт перезагрузки Mikrotik по расписанию</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</link><pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</guid><description>&lt;p>Точка доступа Wi-Fi периодически зависала (один раз, в 2-3 месяца) и помогала перезагрузка устройства. Был сделан небольшой костыль для решения данной проблемы.&lt;/p>
+&lt;h2 id="скрипт-перезагрузки">Скрипт перезагрузки&lt;/h2>
+&lt;p>Идём в System -&amp;gt; Scripts нажимаем Add и заполняем следующим образом:&lt;/p>
+&lt;p>&lt;a href="https://young-admin.org.ru/wp-content/uploads/2021/11/mikrotik-winbox.png">&lt;img src="images/mikrotik-winbox-1024x514.png" alt="">&lt;/a>&lt;/p>
+&lt;p>- &amp;ldquo;Name&amp;rdquo; название, можно указать любое, дальше оно нам понадобиться&lt;br>
+- &amp;ldquo;Policy&amp;rdquo; оставляем по умолчанию&lt;br>
+- В &amp;ldquo;Source&amp;rdquo; записываем следующую команду, которая просто перезагружает устройство:&lt;/p>
+&lt;pre tabindex="0">&lt;code>/system reboot
+&lt;/code>&lt;/pre>&lt;h2 id="запуск-скрипта-по-расписанию">Запуск скрипта по расписанию&lt;/h2>
+&lt;p>Далее ставим выполнение скрипта по расписанию. Заходим в &amp;ldquo;System&amp;rdquo; -&amp;gt; &amp;ldquo;Scheduler&amp;rdquo;, добавляем расписание и заполняем следующим образом:&lt;/p></description></item><item><title>Автоматический бэкап конфигурации Mikrotik</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/09/avtomaticheskij-bekap-konfiguraczii-mikrotik/</link><pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2021/09/avtomaticheskij-bekap-konfiguraczii-mikrotik/</guid><description>&lt;p>В статье описано как автоматизировать бэкапы настроек Mikrotik с отправкой на электронную почту. Все настройки сохраняются в виде текстового файла с расширением .rsc, который можно открыть любым текстовым редактором, например &lt;a href="https://notepad-plus-plus.org/">Notepad++&lt;/a>. Сохранение в текстовом формате, позволяет перенести настройки практически на любой устройство Mikrotik.&lt;/p>
+&lt;h5 id="алёрт">&lt;strong>Алёрт&lt;/strong>&lt;/h5>
+&lt;p>Если знаете как лучше реализовать, сделать или заметили ошибки - &lt;strong>срочно&lt;/strong> пишите комментарий!&lt;/p>
+&lt;h2 id="настройка-отправки-email-с-mikrotik">Настройка отправки email с Mikrotik&lt;/h2>
+&lt;p>Для возможности отправки писем с нашего устройства, произведём настройку.&lt;br>
+Подключаемся к устройству через WinBox. Открываем &amp;ldquo;Tools&amp;rdquo; -&amp;gt; &amp;ldquo;Email&amp;rdquo;. В открывшемся окне &amp;ldquo;Email Settings&amp;rdquo; указываем сервер для отправки почты. Например для Яндекс.Почты, работает также с &amp;ldquo;почтой для домена (ПДД)&amp;rdquo;.&lt;br>
+Server - smtp.yandex.ru&lt;br>
+Port - 465&lt;br>
+Start TLS - tls only. Согласно документации Mikrotik, режим &amp;ldquo;tls only&amp;rdquo; отправляет STARTTLS и прерывает сессию, если TLS не доступен на сервере. Проще говоря отправляет только в защищённом виде.&lt;br>
+А &amp;ldquo;yes&amp;rdquo; отправляет STARTTLS и продолжает без TLS, если сервер отвечает, что TLS недоступен. Так как Яндекс работает только по защищенным каналам, во избежание проблем, указываем &amp;ldquo;tls only&amp;rdquo;.&lt;br>
+From - Имя или адрес электронной почты, который будет отображаться в качестве получателя.&lt;br>
+User - Имя пользователя, используемое для аутентификации на SMTP-сервере.&lt;br>
+Password - Пароль, используемый для аутентификации на SMTP-сервере.&lt;/p></description></item></channel></rss>

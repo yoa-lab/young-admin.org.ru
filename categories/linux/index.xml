@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/categories/linux/</link><description>Recent content in Linux on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Запуск Fail2ban в Debian 12 для SSH</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/10/zapusk-fail2ban-v-debian-12-dlya-ssh/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/10/zapusk-fail2ban-v-debian-12-dlya-ssh/</guid><description>&lt;p>Для работы fail2ban с логами journalctl вместо rsyslog&lt;/p>
+&lt;h2 id="редактирование-конфига">Редактирование конфига&lt;/h2>
+&lt;p>В конфиге fail2ban редактируем следующее:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#По умолчанию будет стоять auto, пример:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>backend &lt;span style="color:#f92672">=&lt;/span> auto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Меняем с auto на systemd&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>backend &lt;span style="color:#f92672">=&lt;/span> systemd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>После замены сохраняем файл и перезапускаем демона:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>service fail2ban restart
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>После перезапуска fail2ban перезапустится без ошибки отсутствия логов и всё заработает.&lt;/p>
+&lt;h2 id="межсетевой-экран">Межсетевой экран&lt;/h2>
+&lt;p>Я обычно использую iptables по старой памяти как его установить можно посмотреть &lt;a href="https://young-admin.org.ru/ustanovka-i-nastrojka-fail2ban/#%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_fail2ban_%D0%B8_iptables">тут&lt;/a>.&lt;/p></description></item><item><title>Поиск недавно измененных файлов в Linux - "Find"</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</link><pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</guid><description>&lt;p>Поиск недавно изменённых файлов, с фильтром по времени редактирования, в каталоге Linux и исключение не интересующего нас подкаталога. Также добавим вывод в текстовый файл.&lt;/p>
+&lt;h2 id="команда">Команда&lt;/h2>
+&lt;p>Например мы хотим посмотреть какие файлы были изменены за последние сутки назад и вывести их в виде списка, в файл. Для поиска воспользуемся &lt;a href="https://manpages.ubuntu.com/manpages/focal/man1/find.1.html">утилитой find&lt;/a>. В консоли вводим следующую команду:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>find /var/www/example.com/ -path /var/www/example.com/logs -prune -o -type f -mtime -1 &amp;gt;&amp;gt; out.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="разбор-команды">Разбор команды&lt;/h2>
+&lt;ul>
+&lt;li>find /var/www/example.com/ - в этой части мы указываем каталог в котором хотим произвести поиск. Для примера я взял каталог сайта example.com;&lt;/li>
+&lt;li>-path /var/www/example.com/logs -prune -o - это часть, исключение из поиска каталога /var/www/example.com/logs, например мы не хотим вывести в итоговом списке часто меняющиеся файлы, в данном случае файлы журнала;&lt;/li>
+&lt;li>-type f - указываем тип - файл;&lt;/li>
+&lt;li>-mtime -1 - поиск по времени модификации, -1 означает изменения в течении одного полного дня, назад, от текущей даты;&lt;/li>
+&lt;li>&amp;gt;&amp;gt; out.txt - перенаправление вывода find в текстовый файл в текущем каталоге.&lt;/li>
+&lt;/ul>
+&lt;h2 id="заключение">Заключение&lt;/h2>
+&lt;p>В итоге после выполнения команды мы получаем файл out.txt. Он будет находится в том каталоге откуда был запущен, стандартно это /root. Внутри файла будет список файлов которые модифицировались в течении суток назад или иного, которое было указано.&lt;/p></description></item><item><title>Простая установка Wireguard VPN на сервер и клиент</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</link><pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</guid><description>&lt;p>В статье будет рассмотрена установка и настройка Wireguard VPN. Можно использовать для установки соединения между клиентом (например телефон) и сервером, например для работы во внутренней сети, рабочих целей, настраивать будем на собственном сервере Linux.&lt;/p>
+&lt;p>В качестве рекомендации, можно выбрать подобного &lt;a href="https://aeza.net/?ref=364032">хостинг провайдера&lt;/a>.&lt;/p>
+&lt;h2 id="арендуем-сервер">Арендуем сервер&lt;/h2>
+&lt;p>Можно арендавать небольшой VPS сервер на KVM, &lt;strong>так как OpenVZ НЕ ПОДДЕРЖИВАЕТСЯ&lt;/strong>.&lt;br>
+Я использовал для тестов следующий сервер:&lt;br>
+- 1 vCPU&lt;br>
+- 8GB RAM&lt;br>
+- 20GB Storage&lt;br>
+- 100 Mbit/s - безлимитный трафик&lt;br>
+- Debian 11&lt;/p></description></item><item><title>Проверка и перезагрузка конфигурационных файлов Apache</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</link><pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</guid><description>&lt;p>Для того чтобы проверить конфигурационные файлы на корректность и не перезапускать весь Apache сервер, чтобы применить настройки конфигурации, достаточно выполнить следующие действия.&lt;br>
+Сначала запустим &lt;a href="https://httpd.apache.org/docs/2.4/programs/apachectl.html">ситаксический тест&lt;/a> файла конфигурации, он нам сообщит либо что всё ОК, что мы верно написали конфиг, либо сообщит подробную информацию о конкретной ошибке.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>apachectl configtest
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Если команда нам сообщила:&lt;/p>
+&lt;p>&lt;a href="https://young-admin.org.ru/wp-content/uploads/2022/05/apachectl-configtest.png">&lt;img src="images/apachectl-configtest.png" alt="syntax ok">&lt;/a>&lt;/p>
+&lt;p>То, перезагружаем (перечитываем) конфиги, для их применения.&lt;br>
+Для перезагрузки конфигов Centos:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>service httpd reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Debian/Ubuntu:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>service apache2 reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Установка и настройка fail2ban</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</link><pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</guid><description>&lt;p>Установим и настроим fail2ban для базовой защиты SSH на Debian 11 bullseye. Я буду ставить fail2ban на свежеустановленную систему.&lt;br>
+Настройка для &lt;a href="https://young-admin.org.ru/zapusk-fail2ban-v-debian-12-dlya-ssh/">Debian 12&lt;/a>.&lt;/p>
+&lt;h2 id="установка-fail2ban-и-iptables">Установка fail2ban и iptables&lt;/h2>
+&lt;p>Перед установкой программ произведём обновление информации о пакетах и зависимостях в подключенных репозиториях:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>apt-get update
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Далее устанавливаем сам fail2ban:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>apt-get install fail2ban
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#или с ключом (параметром) -y, для установки без запросов подтверждения&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>apt-get install -y fail2ban
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>На вопрос хотим ли мы продолжить отвечам y:&lt;/p></description></item></channel></rss>

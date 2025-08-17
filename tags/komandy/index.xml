@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Komandy on Young Admin</title><link>https://yoa-lab.github.io/young-admin.org.ru/tags/komandy/</link><description>Recent content in Komandy on Young Admin</description><generator>Hugo -- gohugo.io</generator><language>ru-RU</language><lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://yoa-lab.github.io/young-admin.org.ru/tags/komandy/index.xml" rel="self" type="application/rss+xml"/><item><title>Массовое удаление Declined, Conflict lease Mikrotik</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</link><pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</guid><description>&lt;p>На mikrtoik массово завиcли клиенты в статусе conflict и declined. У меня lease-time несколько суток, чтобы ошибочные долго не весели, решил удалить их сразу после исправления ошибки из-за которой они появились.&lt;/p>
+&lt;p>Команда для терминала mikrotik&amp;rsquo;а, чтобы массово удалить:&lt;/p>
+&lt;pre tabindex="0">&lt;code>/ip dhcp-server lease remove [find status=declined]
+/ip dhcp-server lease remove [find status=conflict]
+&lt;/code>&lt;/pre></description></item><item><title>Поиск недавно измененных файлов в Linux - "Find"</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</link><pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</guid><description>&lt;p>Поиск недавно изменённых файлов, с фильтром по времени редактирования, в каталоге Linux и исключение не интересующего нас подкаталога. Также добавим вывод в текстовый файл.&lt;/p>
+&lt;h2 id="команда">Команда&lt;/h2>
+&lt;p>Например мы хотим посмотреть какие файлы были изменены за последние сутки назад и вывести их в виде списка, в файл. Для поиска воспользуемся &lt;a href="https://manpages.ubuntu.com/manpages/focal/man1/find.1.html">утилитой find&lt;/a>. В консоли вводим следующую команду:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>find /var/www/example.com/ -path /var/www/example.com/logs -prune -o -type f -mtime -1 &amp;gt;&amp;gt; out.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="разбор-команды">Разбор команды&lt;/h2>
+&lt;ul>
+&lt;li>find /var/www/example.com/ - в этой части мы указываем каталог в котором хотим произвести поиск. Для примера я взял каталог сайта example.com;&lt;/li>
+&lt;li>-path /var/www/example.com/logs -prune -o - это часть, исключение из поиска каталога /var/www/example.com/logs, например мы не хотим вывести в итоговом списке часто меняющиеся файлы, в данном случае файлы журнала;&lt;/li>
+&lt;li>-type f - указываем тип - файл;&lt;/li>
+&lt;li>-mtime -1 - поиск по времени модификации, -1 означает изменения в течении одного полного дня, назад, от текущей даты;&lt;/li>
+&lt;li>&amp;gt;&amp;gt; out.txt - перенаправление вывода find в текстовый файл в текущем каталоге.&lt;/li>
+&lt;/ul>
+&lt;h2 id="заключение">Заключение&lt;/h2>
+&lt;p>В итоге после выполнения команды мы получаем файл out.txt. Он будет находится в том каталоге откуда был запущен, стандартно это /root. Внутри файла будет список файлов которые модифицировались в течении суток назад или иного, которое было указано.&lt;/p></description></item><item><title>Nginx команды</title><link>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/06/nginx-komandy/</link><pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate><guid>https://yoa-lab.github.io/young-admin.org.ru/posts/2022/06/nginx-komandy/</guid><description>&lt;h2 id="узнать-версию-nginx">Узнать версию Nginx&lt;/h2>
+&lt;p>Чтобы узнать только, версию Nginx:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -v
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Узнать версию Nginx, версию компилятора и параметры установленной конфигурации.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -V
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="проверка-конфигурации">Проверка конфигурации&lt;/h2>
+&lt;p>Чтобы проверить правильность синтаксиса конфигурационных файлов:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -t
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="отправка-сигналов-для-запуска-остановки-и-перезагрузки-конфигурации">Отправка сигналов для запуска, остановки и перезагрузки конфигурации&lt;/h2>
+&lt;p>Перезагрузка конфигурационного файла:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nginx -s reload
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
