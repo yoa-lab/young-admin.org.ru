@@ -1,0 +1,8 @@
+User-agent: *
+{{ if .Site.Params.disableIndexing }}
+  Disallow: /
+{{ else }}
+  Allow: /
+{{ end }}
+
+Sitemap: {{ .Site.BaseURL }}sitemap.xml

@@ -4,17 +4,13 @@ title = 'Young Admin'
 theme = "hugo-blog-awesome"
 enableEmoji = true
 
-[robotstxt]
-User-agent = "*"
-Disallow = ""
-Sitemap = "/sitemap.xml"
-
 [params]
   toc = true
   tocLevels = 6
   goToTop = true
   showTagsInPost = true
   Subtitle = "Hugo is Absurdly Fast!"
+  disableIndexing = false
   
   [params.author]
     name = "Young Admin"
