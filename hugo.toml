@@ -4,6 +4,11 @@ title = 'Young Admin'
 theme = "hugo-blog-awesome"
 enableEmoji = true
 
+[robotstxt]
+User-agent = "*"
+Disallow = ""
+Sitemap = "/sitemap.xml"
+
 [params]
   toc = true
   tocLevels = 6
