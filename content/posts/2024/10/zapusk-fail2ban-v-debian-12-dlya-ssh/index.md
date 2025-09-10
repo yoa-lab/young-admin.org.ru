@@ -5,6 +5,7 @@ categories:
   - "linux"
 tags: 
   - "fail2ban"
+description: "Защита SSH в Debian 12 с помощью Fail2Ban"
 ---
 
 Для работы fail2ban с логами journalctl вместо rsyslog

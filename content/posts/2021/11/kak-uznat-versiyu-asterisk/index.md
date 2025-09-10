@@ -5,6 +5,7 @@ categories:
   - "asterisk"
 tags: 
   - "komandy-terminala"
+description: "Как определить версию Asterisk: способы проверки версии через CLI и команды Linux"
 ---
 
 Версию можно узнать набрав в терминале:

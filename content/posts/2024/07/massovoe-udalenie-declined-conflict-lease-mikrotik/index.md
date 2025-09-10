@@ -6,6 +6,7 @@ categories:
   - "setevoe-oborudovanie"
 tags: 
   - "komandy"
+description: "Как очистить lease MikroTik от declined и conflict записей"
 ---
 
 На mikrtoik массово завиcли клиенты в статусе conflict и declined. У меня lease-time несколько суток, чтобы ошибочные долго не весели, решил удалить их сразу после исправления ошибки из-за которой они появились.
