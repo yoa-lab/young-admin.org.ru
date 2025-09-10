@@ -4,13 +4,20 @@ title = 'Young Admin'
 theme = "hugo-blog-awesome"
 enableEmoji = true
 
+[outputFormats]
+  [outputFormats.ROBOTS]
+    mediatype = "text/plain"
+    baseName = "robots"
+
+[outputs]
+  home = ["HTML", "RSS", "ROBOTS"]
+
 [params]
   toc = true
   tocLevels = 6
   goToTop = true
   showTagsInPost = true
   Subtitle = "Hugo is Absurdly Fast!"
-  disableIndexing = false
   
   [params.author]
     name = "Young Admin"
