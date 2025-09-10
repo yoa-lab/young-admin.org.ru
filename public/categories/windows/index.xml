@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/categories/windows/</link>
+    <description>Recent content in Windows on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Thu, 28 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Автоматическое обновление программ Windows 10/11</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2023/12/avtomaticheskoe-obnovlenie-programm-windows-10-11/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2023/12/avtomaticheskoe-obnovlenie-programm-windows-10-11/</guid>
+      
+      <description>&lt;p&gt;Некоторые программы не имеют встроеной системы автоматического обновления, но могут выводить сообщения о том, что доступна новая версия. Данные уведомления мне надоели, решено их обновлять автоматически, когда компьютер например не используется, другими средствами. Для этого можно воспользоваться пакетным менеджером встроенным в Windows 10/11 - это Winget.&lt;/p&gt;
+&lt;p&gt;Также есть &lt;a href=&#34;https://young-admin.org.ru/avtomatizacziya-ustanovki-programm-na-windows/&#34;&gt;другой способ&lt;/a&gt; установки и обновления программ, с помощью сторонней программы Chocolatey.&lt;/p&gt;
+&lt;h2 id=&#34;что-необходимо-для-работы-winget&#34;&gt;Что необходимо для работы WinGet&lt;/h2&gt;
+&lt;p&gt;Winget встроен с версий Windows 10 21H1 и Windows 11 21H2 и новее.&lt;br&gt;
+Чтобы проверить его наличие, достаточно открыть командную строку Windows и ввести, например, команду:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Автоматизация установки программ на Windows</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/10/avtomatizacziya-ustanovki-programm-na-windows/</link>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/10/avtomatizacziya-ustanovki-programm-na-windows/</guid>
+      
+      <description>&lt;p&gt;Необходимо было автоматизировать установку типовых программ на компьютеры пользователей, дабы не развлекаться при установке нового компьютера, поиском, скачиванием и кликами в установщике. Рассматривал различные варианты, от различных программных автоустановщиков, до модификации установщика операционной системы. Остановился на &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Возможно устанавливать и обновлять программы с &lt;a href=&#34;https://young-admin.org.ru/avtomaticheskoe-obnovlenie-programm-windows-10-11/&#34;&gt;помощью встроенного&lt;/a&gt; в Windows 10 и старше, менеджера пакетов.&lt;/p&gt;
+&lt;h2 id=&#34;скрипты-авто-установки&#34;&gt;Скрипты &amp;ldquo;авто&amp;rdquo; установки&lt;/h2&gt;
+&lt;p&gt;Скрипты были сделаны на скорую руку, если знаете сделать как лучше, обязательно напишите об этом в комментариях!&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru-RU"><head><script src="/young-admin.org.ru/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=young-admin.org.ru/livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Настройка SMTP почты (Mail.ru) в Gitlab | Young Admin</title>
+<meta property="og:title" content="Настройка SMTP почты (Mail.ru) в Gitlab | Young Admin" />
+<meta name="twitter:title" content="Настройка SMTP почты (Mail.ru) в Gitlab | Young Admin" />
+<meta itemprop="name" content="Настройка SMTP почты (Mail.ru) в Gitlab | Young Admin" />
+<meta name="application-name" content="Настройка SMTP почты (Mail.ru) в Gitlab | Young Admin" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Трелалело тралала">
+<meta itemprop="description" content="Трелалело тралала" />
+<meta property="og:description" content="Трелалело тралала" />
+<meta name="twitter:description" content="Трелалело тралала" />
+
+<meta property="og:locale" content="ru-RU" />
+<meta name="language" content="ru-RU" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2023-09-07T00:00:00Z />
+    <meta property="article:published_time" content=2023-09-07T00:00:00Z />
+    <meta property="og:url" content="http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/" />
+
+    
+    <meta property="og:article:author" content="Young Admin" />
+    <meta property="article:author" content="Young Admin" />
+    <meta name="author" content="Young Admin" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Настройка SMTP почты (Mail.ru) в Gitlab",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2023-09-07",
+        "description": "",
+        "wordCount":  241 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2023-09-07",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Young Admin"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.148.1">
+
+    
+    <meta property="og:url" content="http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/">
+  <meta property="og:site_name" content="Young Admin">
+  <meta property="og:title" content="Настройка SMTP почты (Mail.ru) в Gitlab">
+  <meta property="og:description" content="Подключим существующий аккаунт на почте mail.ru по SMTP к Gitlab, для получения уведомлений. Gitlab в моём случае запущен на Debian в облаке, но подходит решение и к другим конфигурациям.
+Создание пароля для внешнего приложения Для работы Mail.ru почты по SMTP с Gitlab (или другими приложениями) нужно создать “пароль для внешнего приложения”. Даём понятное название для нашего пароля, проходим капчу и в конце получаем наш пароль - его лучше записать, выводится только один раз.">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-09-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-07T00:00:00+00:00">
+    <meta property="article:tag" content="Gitlab">
+    <meta property="article:tag" content="Smtp">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Настройка SMTP почты (Mail.ru) в Gitlab">
+  <meta name="twitter:description" content="Подключим существующий аккаунт на почте mail.ru по SMTP к Gitlab, для получения уведомлений. Gitlab в моём случае запущен на Debian в облаке, но подходит решение и к другим конфигурациям.
+Создание пароля для внешнего приложения Для работы Mail.ru почты по SMTP с Gitlab (или другими приложениями) нужно создать “пароль для внешнего приложения”. Даём понятное название для нашего пароля, проходим капчу и в конце получаем наш пароль - его лучше записать, выводится только один раз.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/">
+    <link href="/young-admin.org.ru/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/young-admin.org.ru/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/young-admin.org.ru/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/young-admin.org.ru/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/young-admin.org.ru/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/young-admin.org.ru/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/young-admin.org.ru/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/young-admin.org.ru/site.webmanifest">
+
+<meta name="msapplication-config" content="/young-admin.org.ru/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/young-admin.org.ru/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/young-admin.org.ru/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/young-admin.org.ru/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/young-admin.org.ru/">
+                        Главная
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/young-admin.org.ru/tags/">
+                        Теги
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/young-admin.org.ru/posts/">
+                        Посты
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Настройка SMTP почты (Mail.ru) в Gitlab</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2023-09-07T00:00:00&#43;00:00" itemprop="datePublished"> Sep 7, 2023 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b></b></summary>
+        <nav id="TableOfContents">
+  <ol>
+    <li><a href="#создание-пароля-для-внешнего-приложения">Создание пароля для внешнего приложения</a></li>
+    <li><a href="#настройка-gitlab-для-работы-с-почтой">Настройка Gitlab для работы с почтой</a>
+      <ol>
+        <li><a href="#редактируем-конфиг">Редактируем конфиг</a></li>
+        <li><a href="#применяем-изменения-и-проверяем-работу-почты">Применяем изменения и проверяем работу почты</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Подключим существующий аккаунт на почте mail.ru по SMTP к Gitlab, для получения уведомлений. Gitlab в моём случае запущен на Debian в облаке, но подходит решение и к другим конфигурациям.</p>
+<h2 id="создание-пароля-для-внешнего-приложения">Создание пароля для внешнего приложения</h2>
+<p>Для работы Mail.ru почты по SMTP с Gitlab (или другими приложениями) нужно <a href="https://account.mail.ru/user/2-step-auth/passwords/add">создать</a> &ldquo;пароль для внешнего приложения&rdquo;. Даём понятное название для нашего пароля, проходим капчу и в конце получаем наш пароль - его лучше записать, выводится только один раз.</p>
+<p><a href="https://young-admin.org.ru/wp-content/uploads/2023/09/stranicza-parolya-dlya-vneshnego-prilozheniya-mail-ru.png"><img src="images/stranicza-parolya-dlya-vneshnego-prilozheniya-mail-ru-1024x489.png" alt="Страница пароля для внешнего приложения mail ru"></a></p>
+<p><a href="https://young-admin.org.ru/wp-content/uploads/2023/09/parol-dlya-vneshnego-prilozheniya-mail-ru.png"><img src="images/parol-dlya-vneshnego-prilozheniya-mail-ru-1024x450.png" alt="Пароль для внешнего приложения mail ru"></a></p>
+<h2 id="настройка-gitlab-для-работы-с-почтой">Настройка Gitlab для работы с почтой</h2>
+<h3 id="редактируем-конфиг">Редактируем конфиг</h3>
+<p>Подключаемся к нашему серверу и переходим к редактированию файла gitlab.rb. Я использую в качестве редактора MC, можно использовать любой другой, например vi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mcedit /etc/gitlab/gitlab.rb
+</span></span></code></pre></div><p>Ищем следующие настройки - GitLab email server settings, если закомментированы, убираем комментарий. Редактируем их и приводим к такому виду, указывая свои данные:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_enable&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_address&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;smtp.mail.ru&#34;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_port&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">465</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_user_name&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;example@mail.ru&#34;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_password&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;указываем пароль для внешнего приложения&#34;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_domain&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;здесь может быть как ваш приобритённый домен так и mail.ru&#34;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;gitlab_email_from&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;example@mail.ru&#39;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_authentication&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;login&#34;</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_tls&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_enable_starttls_auto&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span> gitlab_rails<span style="color:#f92672">[</span><span style="color:#e6db74">&#39;smtp_openssl_verify_mode&#39;</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;peer&#39;</span>
+</span></span></code></pre></div><h3 id="применяем-изменения-и-проверяем-работу-почты">Применяем изменения и проверяем работу почты</h3>
+<p>Для применения внесённых изменений в конфиг, нужно запустить реконфигурацию из консоли Linux:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitlab-ctl reconfigure
+</span></span></code></pre></div><p>После реконфигурации можно сразу проверить работу, отправив тестовое письмо, например себе на почту. Для этого заходим в <a href="https://docs.gitlab.com/ee/administration/operations/rails_console.html">Rails console</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitlab-rails console -e production
+</span></span></code></pre></div><p>И проверяем отправку с помощью команды:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span><span style="color:#66d9ef">Notify</span><span style="color:#f92672">.</span>test_email(<span style="color:#e6db74">&#39;admin@example.com&#39;</span>, <span style="color:#e6db74">&#39;Test&#39;</span>, <span style="color:#e6db74">&#39;some test email&#39;</span>)<span style="color:#f92672">.</span>deliver_now
+</span></span></code></pre></div><p>По итогу на указанный адрес должно прийти тестовое письмо. Настройка почты для Gitlab закончена.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Young Admin.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/young-admin.org.ru/js/main.js" ></script>
+
+    
+
+</body>
+</html>

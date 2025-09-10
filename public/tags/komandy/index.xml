@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Komandy on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/komandy/</link>
+    <description>Recent content in Komandy on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Fri, 26 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/komandy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Массовое удаление Declined, Conflict lease Mikrotik</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</link>
+      <pubDate>Fri, 26 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2024/07/massovoe-udalenie-declined-conflict-lease-mikrotik/</guid>
+      
+      <description>&lt;p&gt;На mikrtoik массово завиcли клиенты в статусе conflict и declined. У меня lease-time несколько суток, чтобы ошибочные долго не весели, решил удалить их сразу после исправления ошибки из-за которой они появились.&lt;/p&gt;
+&lt;p&gt;Команда для терминала mikrotik&amp;rsquo;а, чтобы массово удалить:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/ip dhcp-server lease remove [find status=declined]
+/ip dhcp-server lease remove [find status=conflict]
+&lt;/code&gt;&lt;/pre&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Поиск недавно измененных файлов в  Linux - &#34;Find&#34;</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</link>
+      <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2023/06/poisk-nedavno-izmenennyh-fajlov-v-linux-find/</guid>
+      
+      <description>&lt;p&gt;Поиск недавно изменённых файлов, с фильтром по времени редактирования, в каталоге Linux и исключение не интересующего нас подкаталога. Также добавим вывод в текстовый файл.&lt;/p&gt;
+&lt;h2 id=&#34;команда&#34;&gt;Команда&lt;/h2&gt;
+&lt;p&gt;Например мы хотим посмотреть какие файлы были изменены за последние сутки назад и вывести их в виде списка, в файл. Для поиска воспользуемся &lt;a href=&#34;https://manpages.ubuntu.com/manpages/focal/man1/find.1.html&#34;&gt;утилитой find&lt;/a&gt;. В консоли вводим следующую команду:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find /var/www/example.com/ -path /var/www/example.com/logs -prune -o -type f -mtime -1 &amp;gt;&amp;gt; out.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;разбор-команды&#34;&gt;Разбор команды&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;find /var/www/example.com/ - в этой части мы указываем каталог в котором хотим произвести поиск. Для примера я взял каталог сайта example.com;&lt;/li&gt;
+&lt;li&gt;-path /var/www/example.com/logs -prune -o - это часть, исключение из поиска каталога /var/www/example.com/logs, например мы не хотим вывести в итоговом списке часто меняющиеся файлы, в данном случае файлы журнала;&lt;/li&gt;
+&lt;li&gt;-type f - указываем тип - файл;&lt;/li&gt;
+&lt;li&gt;-mtime -1 - поиск по времени модификации, -1 означает изменения в течении одного полного дня, назад, от текущей даты;&lt;/li&gt;
+&lt;li&gt;&amp;gt;&amp;gt; out.txt - перенаправление вывода find в текстовый файл в текущем каталоге.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;заключение&#34;&gt;Заключение&lt;/h2&gt;
+&lt;p&gt;В итоге после выполнения команды мы получаем файл out.txt. Он будет находится в том каталоге откуда был запущен, стандартно это /root. Внутри файла будет список файлов которые модифицировались в течении суток назад или иного, которое было указано.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Nginx команды</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/06/nginx-komandy/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/06/nginx-komandy/</guid>
+      
+      <description>&lt;h2 id=&#34;узнать-версию-nginx&#34;&gt;Узнать версию Nginx&lt;/h2&gt;
+&lt;p&gt;Чтобы узнать только, версию Nginx:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Узнать версию Nginx, версию компилятора и параметры установленной конфигурации.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx -V
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;проверка-конфигурации&#34;&gt;Проверка конфигурации&lt;/h2&gt;
+&lt;p&gt;Чтобы проверить правильность синтаксиса конфигурационных файлов:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx -t
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;отправка-сигналов-для-запуска-остановки-и-перезагрузки-конфигурации&#34;&gt;Отправка сигналов для запуска, остановки и перезагрузки конфигурации&lt;/h2&gt;
+&lt;p&gt;Перезагрузка конфигурационного файла:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nginx -s reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

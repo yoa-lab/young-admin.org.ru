@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/centos/</link>
+    <description>Recent content in Centos on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Проверка и перезагрузка конфигурационных файлов Apache</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</guid>
+      
+      <description>&lt;p&gt;Для того чтобы проверить конфигурационные файлы на корректность и не перезапускать весь Apache сервер, чтобы применить настройки конфигурации, достаточно выполнить следующие действия.&lt;br&gt;
+Сначала запустим &lt;a href=&#34;https://httpd.apache.org/docs/2.4/programs/apachectl.html&#34;&gt;ситаксический тест&lt;/a&gt; файла конфигурации, он нам сообщит либо что всё ОК, что мы верно написали конфиг, либо сообщит подробную информацию о конкретной ошибке.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apachectl configtest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Если команда нам сообщила:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2022/05/apachectl-configtest.png&#34;&gt;&lt;img src=&#34;images/apachectl-configtest.png&#34; alt=&#34;syntax ok&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;То, перезагружаем (перечитываем) конфиги, для их применения.&lt;br&gt;
+Для перезагрузки конфигов Centos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service httpd reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Debian/Ubuntu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service apache2 reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

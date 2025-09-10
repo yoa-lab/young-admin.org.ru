@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qa on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/categories/qa/</link>
+    <description>Recent content in Qa on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/categories/qa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acme.sh вопросы &amp; ответы</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</guid>
+      
+      <description>&lt;p&gt;Данные ответы можно найти также в &lt;a href=&#34;https://github.com/acmesh-official/acme.sh/wiki&#34;&gt;официальной документации&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;как-удалить-сертификат-из-списка-обновляемых&#34;&gt;Как удалить сертификат из списка обновляемых&lt;/h2&gt;
+&lt;p&gt;Пример - удалили сайт с сервера, сменили домен (а старый не нужен), acme.sh продолжает пытаться выпустить сертификат для сайта и ещё и уведомления каждую ночь шлёт об ошибке, если &lt;a href=&#34;#&#34;&gt;вы их настроили&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Чтобы остановить это, надо сделать следующее, заходим в консоль сервера, далее в каталог с acme.sh, и выполняем следующую команду:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;acme.sh --remove -d example.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;acme.sh - Вызываем сам acme.sh скрипт&lt;/li&gt;
+&lt;li&gt;- - remove - команда удаления сертификата из списка сертификатов, известных acme.sh.&lt;/li&gt;
+&lt;li&gt;-d - ключ для указания домена, в примере это домен - example.com&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;смена-центра-сертификации&#34;&gt;Смена центра сертификации&lt;/h2&gt;
+&lt;p&gt;Пример - ZeroSSSL больше не выпускает сертификаты для .RU доменной зоны (при запросе выходит ошибка), а Lets Encrypt выпускает.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

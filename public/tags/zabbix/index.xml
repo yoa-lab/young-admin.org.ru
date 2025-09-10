@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zabbix on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/zabbix/</link>
+    <description>Recent content in Zabbix on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/zabbix/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мониторинг остатка средств Selectel в Zabbix</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2025/01/monitoring-ostatka-sredstv-selectel-v-zabbix/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2025/01/monitoring-ostatka-sredstv-selectel-v-zabbix/</guid>
+      
+      <description>&lt;p&gt;Ставим на мониторинг баланс счета, с графиком изменения суммы счета и триггер при критическом остатке средств. При срабатывания триггера будем получать уведомления.&lt;/p&gt;
+&lt;h2 id=&#34;введение&#34;&gt;Введение&lt;/h2&gt;
+&lt;p&gt;Цель - держать на мониторинге баланс и быть уверенным, что денежные средства не закончились. Мониторинг будет висеть на хосте Zabbix сервера, через агента.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Установим на Zabbix сервере - jq, если он ещё не установлен, для работы с API&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Создадим bash скрипт для отправки запроса и обработки полученных данных&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

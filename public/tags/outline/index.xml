@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Outline on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/outline/</link>
+    <description>Recent content in Outline on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Fri, 02 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/outline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка и настройка Outline VPN</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2023/06/ustanovka-i-nastrojka-outline-vpn/</link>
+      <pubDate>Fri, 02 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2023/06/ustanovka-i-nastrojka-outline-vpn/</guid>
+      
+      <description>&lt;p&gt;В статье будет рассмотрена установка и настройка VPN Outline. Можно использовать для установки соединения между клиентом (например телефон) и сервером, например для работы во внутренней сети, рабочих целей, настраивать будем на собственном сервере Linux.&lt;/p&gt;
+&lt;p&gt;В качестве рекомендации, можно выбрать подобного &lt;a href=&#34;https://aeza.net/?ref=364032&#34;&gt;хостинг провайдера&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;установка&#34;&gt;Установка&lt;/h2&gt;
+&lt;p&gt;Перед настройкой сервера, предлагается &lt;a href=&#34;https://www.getoutline.org/ru/get-started/&#34;&gt;установить и запустить&lt;/a&gt; Outline Manager, откуда возможно централизованно управлять всеми настройками. Также возможно выбрать один из предложенных облачных сервисов или использовать собственную инфраструктуру Linux для настройки сервера.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

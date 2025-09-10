@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zammad on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/zammad/</link>
+    <description>Recent content in Zammad on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Tue, 22 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/zammad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Оповещения по заявкам от Zammad в Telegram</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2024/10/opoveshheniya-po-zayavkam-ot-zammad-v-telegram/</link>
+      <pubDate>Tue, 22 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2024/10/opoveshheniya-po-zayavkam-ot-zammad-v-telegram/</guid>
+      
+      <description>&lt;p&gt;Для получения оповещений о новых тикетах или другой информации из оных, в групповом чате Telegram через Webhook. Бот предварительно должен быть добавлен в групповой чат.&lt;/p&gt;
+&lt;h2 id=&#34;создание-webhook&#34;&gt;Создание Webhook&lt;/h2&gt;
+&lt;p&gt;Заходим в настройки, управление, Webhooks и добавляем новый &amp;ldquo;Веб-перехватчик&amp;rdquo;:&lt;br&gt;
+- Имя - указываем любое, понятное;&lt;br&gt;
+- Endpoint - &lt;a href=&#34;https://core.telegram.org/bots/api#making-requests&#34;&gt;ссылка на api&lt;/a&gt; с вашим токеном для доступа к боту в Telegram. Токен можно получить у &lt;a href=&#34;https://t.me/BotFather&#34;&gt;BotFather&lt;/a&gt;:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-markup&#34; data-lang=&#34;markup&#34;&gt;https://api.telegram.org/bot&amp;lt;token&amp;gt;/sendMessage
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2024/10/webhook-zammad-1.png&#34;&gt;&lt;img src=&#34;images/webhook-zammad-1-1024x497.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Данные для Payload:&lt;/p&gt;
+&lt;p&gt;- chat_id - id вашего группового чата, узнать его можно пригласив в него &lt;a href=&#34;https://t.me/getmyid_bot&#34;&gt;подобного бота&lt;/a&gt;;&lt;br&gt;
+- text - указываем информацию которую хотим получить в уведомлении. У меня это заголовок тикета, его номер с ссылкой, кем создан, дата и время. На этой же странице есть пример Payload, где можно подобрать свои данные для сообщения;&lt;br&gt;
+- Disable_notification - не обязателен можете оставить или убрать, пользователи получат уведомление без звука.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bazy-Dannyh on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/categories/bazy-dannyh/</link>
+    <description>Recent content in Bazy-Dannyh on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 25 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/categories/bazy-dannyh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Как добавить пользователя БД с возможностью выборки - phpMyAdmin</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/08/kak-dobavit-polzovatelya-bd-cherez-phpmyadmin/</link>
+      <pubDate>Wed, 25 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/08/kak-dobavit-polzovatelya-bd-cherez-phpmyadmin/</guid>
+      
+      <description>&lt;p&gt;Добавляем пользователя базы данных и предоставляем доступ к некоторым таблицам БД, с возможностью, только выборки(select).&lt;br&gt;
+Вся настройка происходила под root пользователем базы данных, в phpMyAdmin.&lt;/p&gt;
+&lt;h5 id=&#34;алёрт&#34;&gt;Алёрт&lt;/h5&gt;
+&lt;p&gt;Если знаете как лучше реализовать, сделать или заметили ошибки - &lt;strong&gt;срочно&lt;/strong&gt; пишите комментарий!&lt;/p&gt;
+&lt;p&gt;1. Заходим в phpMyAdmin, стандартный путь это ip адрес или домен, например:&lt;br&gt;
+http://192.168.1.10/phpmyadmin/index.php&lt;br&gt;
+&lt;a href=&#34;http://example.com/phpmyadmin/index.php&#34;&gt;http://example.com/phpmyadmin/index.php&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2021/08/screen_phpmyadmin.png&#34;&gt;&lt;img src=&#34;images/screen_phpmyadmin-1024x413.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Главная phpMyAdmin&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2. Переходим на верхней панели в &amp;ldquo;Пользователи&amp;rdquo;&lt;br&gt;
+3. Добавляем нового пользователя, с нужными нам параметрами. В примере, имя пользователя я указал test, хост локальный (localhost), пароль - без пароля.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

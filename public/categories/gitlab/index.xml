@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitlab on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/categories/gitlab/</link>
+    <description>Recent content in Gitlab on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Thu, 07 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/categories/gitlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Настройка SMTP почты (Mail.ru) в Gitlab</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/</link>
+      <pubDate>Thu, 07 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2023/09/nastrojka-pochty-mail-ru-v-gitlab/</guid>
+      
+      <description>&lt;p&gt;Подключим существующий аккаунт на почте mail.ru по SMTP к Gitlab, для получения уведомлений. Gitlab в моём случае запущен на Debian в облаке, но подходит решение и к другим конфигурациям.&lt;/p&gt;
+&lt;h2 id=&#34;создание-пароля-для-внешнего-приложения&#34;&gt;Создание пароля для внешнего приложения&lt;/h2&gt;
+&lt;p&gt;Для работы Mail.ru почты по SMTP с Gitlab (или другими приложениями) нужно &lt;a href=&#34;https://account.mail.ru/user/2-step-auth/passwords/add&#34;&gt;создать&lt;/a&gt; &amp;ldquo;пароль для внешнего приложения&amp;rdquo;. Даём понятное название для нашего пароля, проходим капчу и в конце получаем наш пароль - его лучше записать, выводится только один раз.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

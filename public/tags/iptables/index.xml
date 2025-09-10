@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iptables on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/iptables/</link>
+    <description>Recent content in Iptables on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 18 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/iptables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Установка и настройка fail2ban</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</guid>
+      
+      <description>&lt;p&gt;Установим и настроим fail2ban для базовой защиты SSH на Debian 11 bullseye. Я буду ставить fail2ban на свежеустановленную систему.&lt;br&gt;
+Настройка для &lt;a href=&#34;https://young-admin.org.ru/zapusk-fail2ban-v-debian-12-dlya-ssh/&#34;&gt;Debian 12&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;установка-fail2ban-и-iptables&#34;&gt;Установка fail2ban и iptables&lt;/h2&gt;
+&lt;p&gt;Перед установкой программ произведём обновление информации о пакетах и зависимостях в подключенных репозиториях:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Далее устанавливаем сам fail2ban:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#или с ключом (параметром) -y, для установки без запросов подтверждения&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install -y fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;На вопрос хотим ли мы продолжить отвечам y:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

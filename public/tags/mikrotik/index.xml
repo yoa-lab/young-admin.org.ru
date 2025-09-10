@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mikrotik on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/mikrotik/</link>
+    <description>Recent content in Mikrotik on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Thu, 11 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/mikrotik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Скрипт перезагрузки Mikrotik по расписанию</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</link>
+      <pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</guid>
+      
+      <description>&lt;p&gt;Точка доступа Wi-Fi периодически зависала (один раз, в 2-3 месяца) и помогала перезагрузка устройства. Был сделан небольшой костыль для решения данной проблемы.&lt;/p&gt;
+&lt;h2 id=&#34;скрипт-перезагрузки&#34;&gt;Скрипт перезагрузки&lt;/h2&gt;
+&lt;p&gt;Идём в System -&amp;gt; Scripts нажимаем Add и заполняем следующим образом:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2021/11/mikrotik-winbox.png&#34;&gt;&lt;img src=&#34;images/mikrotik-winbox-1024x514.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &amp;ldquo;Name&amp;rdquo; название, можно указать любое, дальше оно нам понадобиться&lt;br&gt;
+- &amp;ldquo;Policy&amp;rdquo; оставляем по умолчанию&lt;br&gt;
+- В &amp;ldquo;Source&amp;rdquo; записываем следующую команду, которая просто перезагружает устройство:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/system reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;запуск-скрипта-по-расписанию&#34;&gt;Запуск скрипта по расписанию&lt;/h2&gt;
+&lt;p&gt;Далее ставим выполнение скрипта по расписанию. Заходим в &amp;ldquo;System&amp;rdquo; -&amp;gt; &amp;ldquo;Scheduler&amp;rdquo;, добавляем расписание и заполняем следующим образом:&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Skript on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/skript/</link>
+    <description>Recent content in Skript on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Mon, 26 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/skript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acme.sh вопросы &amp; ответы</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</link>
+      <pubDate>Mon, 26 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/12/acme-sh-voprosy-otvety/</guid>
+      
+      <description>&lt;p&gt;Данные ответы можно найти также в &lt;a href=&#34;https://github.com/acmesh-official/acme.sh/wiki&#34;&gt;официальной документации&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;как-удалить-сертификат-из-списка-обновляемых&#34;&gt;Как удалить сертификат из списка обновляемых&lt;/h2&gt;
+&lt;p&gt;Пример - удалили сайт с сервера, сменили домен (а старый не нужен), acme.sh продолжает пытаться выпустить сертификат для сайта и ещё и уведомления каждую ночь шлёт об ошибке, если &lt;a href=&#34;#&#34;&gt;вы их настроили&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Чтобы остановить это, надо сделать следующее, заходим в консоль сервера, далее в каталог с acme.sh, и выполняем следующую команду:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;acme.sh --remove -d example.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;acme.sh - Вызываем сам acme.sh скрипт&lt;/li&gt;
+&lt;li&gt;- - remove - команда удаления сертификата из списка сертификатов, известных acme.sh.&lt;/li&gt;
+&lt;li&gt;-d - ключ для указания домена, в примере это домен - example.com&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;смена-центра-сертификации&#34;&gt;Смена центра сертификации&lt;/h2&gt;
+&lt;p&gt;Пример - ZeroSSSL больше не выпускает сертификаты для .RU доменной зоны (при запросе выходит ошибка), а Lets Encrypt выпускает.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Простая установка Wireguard VPN на сервер и клиент</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</link>
+      <pubDate>Fri, 28 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/10/prostaya-ustanovka-wireguard-vpn-na-server-i-klient/</guid>
+      
+      <description>&lt;p&gt;В статье будет рассмотрена установка и настройка Wireguard VPN. Можно использовать для установки соединения между клиентом (например телефон) и сервером, например для работы во внутренней сети, рабочих целей, настраивать будем на собственном сервере Linux.&lt;/p&gt;
+&lt;p&gt;В качестве рекомендации, можно выбрать подобного &lt;a href=&#34;https://aeza.net/?ref=364032&#34;&gt;хостинг провайдера&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;арендуем-сервер&#34;&gt;Арендуем сервер&lt;/h2&gt;
+&lt;p&gt;Можно арендавать небольшой VPS сервер на KVM, &lt;strong&gt;так как OpenVZ НЕ ПОДДЕРЖИВАЕТСЯ&lt;/strong&gt;.&lt;br&gt;
+Я использовал для тестов следующий сервер:&lt;br&gt;
+- 1 vCPU&lt;br&gt;
+- 8GB RAM&lt;br&gt;
+- 20GB Storage&lt;br&gt;
+- 100 Mbit/s - безлимитный трафик&lt;br&gt;
+- Debian 11&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Автоматически остановить php процесс запущенный дольше часа</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/05/avtomaticheski-ostanovit-php-proczess-zapushhennyj-dolshe-chasa/</link>
+      <pubDate>Fri, 06 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/05/avtomaticheski-ostanovit-php-proczess-zapushhennyj-dolshe-chasa/</guid>
+      
+      <description>&lt;p&gt;Bash скрипт для завершения php процессов, которые зависли или не завершились. В данном случае мы их будем искать и завершать, если они длятся более одного часа.&lt;br&gt;
+Данный скрипт был взят на просторах Интернета, автора и источник вы можете посмотреть здесь:&lt;br&gt;
+Ссылка - &lt;a href=&#34;https://stackoverflow.com/a/12765886&#34;&gt;https://stackoverflow.com/a/12765886&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;создание-файла-и-код-скрипта&#34;&gt;Создание файла и код скрипта&lt;/h2&gt;
+&lt;p&gt;Создадим файл скрипта, с названием php_pkill.sh, через любой текстовый редактор и положим его например в /root/.&lt;br&gt;
+После дадим права на выполнение данного скрипта:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Скрипт перезагрузки Mikrotik по расписанию</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</link>
+      <pubDate>Thu, 11 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/11/mikrotik-skript-perezagruzki/</guid>
+      
+      <description>&lt;p&gt;Точка доступа Wi-Fi периодически зависала (один раз, в 2-3 месяца) и помогала перезагрузка устройства. Был сделан небольшой костыль для решения данной проблемы.&lt;/p&gt;
+&lt;h2 id=&#34;скрипт-перезагрузки&#34;&gt;Скрипт перезагрузки&lt;/h2&gt;
+&lt;p&gt;Идём в System -&amp;gt; Scripts нажимаем Add и заполняем следующим образом:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2021/11/mikrotik-winbox.png&#34;&gt;&lt;img src=&#34;images/mikrotik-winbox-1024x514.png&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;- &amp;ldquo;Name&amp;rdquo; название, можно указать любое, дальше оно нам понадобиться&lt;br&gt;
+- &amp;ldquo;Policy&amp;rdquo; оставляем по умолчанию&lt;br&gt;
+- В &amp;ldquo;Source&amp;rdquo; записываем следующую команду, которая просто перезагружает устройство:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;/system reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;запуск-скрипта-по-расписанию&#34;&gt;Запуск скрипта по расписанию&lt;/h2&gt;
+&lt;p&gt;Далее ставим выполнение скрипта по расписанию. Заходим в &amp;ldquo;System&amp;rdquo; -&amp;gt; &amp;ldquo;Scheduler&amp;rdquo;, добавляем расписание и заполняем следующим образом:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Автоматизация установки программ на Windows</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/10/avtomatizacziya-ustanovki-programm-na-windows/</link>
+      <pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/10/avtomatizacziya-ustanovki-programm-na-windows/</guid>
+      
+      <description>&lt;p&gt;Необходимо было автоматизировать установку типовых программ на компьютеры пользователей, дабы не развлекаться при установке нового компьютера, поиском, скачиванием и кликами в установщике. Рассматривал различные варианты, от различных программных автоустановщиков, до модификации установщика операционной системы. Остановился на &lt;a href=&#34;https://chocolatey.org/&#34;&gt;Chocolatey&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Возможно устанавливать и обновлять программы с &lt;a href=&#34;https://young-admin.org.ru/avtomaticheskoe-obnovlenie-programm-windows-10-11/&#34;&gt;помощью встроенного&lt;/a&gt; в Windows 10 и старше, менеджера пакетов.&lt;/p&gt;
+&lt;h2 id=&#34;скрипты-авто-установки&#34;&gt;Скрипты &amp;ldquo;авто&amp;rdquo; установки&lt;/h2&gt;
+&lt;p&gt;Скрипты были сделаны на скорую руку, если знаете сделать как лучше, обязательно напишите об этом в комментариях!&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Автоматический бэкап конфигурации Mikrotik</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/09/avtomaticheskij-bekap-konfiguraczii-mikrotik/</link>
+      <pubDate>Fri, 10 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/09/avtomaticheskij-bekap-konfiguraczii-mikrotik/</guid>
+      
+      <description>&lt;p&gt;В статье описано как автоматизировать бэкапы настроек Mikrotik с отправкой на электронную почту. Все настройки сохраняются в виде текстового файла с расширением .rsc, который можно открыть любым текстовым редактором, например &lt;a href=&#34;https://notepad-plus-plus.org/&#34;&gt;Notepad++&lt;/a&gt;. Сохранение в текстовом формате, позволяет перенести настройки практически на любой устройство Mikrotik.&lt;/p&gt;
+&lt;h5 id=&#34;алёрт&#34;&gt;&lt;strong&gt;Алёрт&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;Если знаете как лучше реализовать, сделать или заметили ошибки - &lt;strong&gt;срочно&lt;/strong&gt; пишите комментарий!&lt;/p&gt;
+&lt;h2 id=&#34;настройка-отправки-email-с-mikrotik&#34;&gt;Настройка отправки email с Mikrotik&lt;/h2&gt;
+&lt;p&gt;Для возможности отправки писем с нашего устройства, произведём настройку.&lt;br&gt;
+Подключаемся к устройству через WinBox. Открываем &amp;ldquo;Tools&amp;rdquo; -&amp;gt; &amp;ldquo;Email&amp;rdquo;. В открывшемся окне &amp;ldquo;Email Settings&amp;rdquo; указываем сервер для отправки почты. Например для Яндекс.Почты, работает также с &amp;ldquo;почтой для домена (ПДД)&amp;rdquo;.&lt;br&gt;
+Server - smtp.yandex.ru&lt;br&gt;
+Port - 465&lt;br&gt;
+Start TLS - tls only. Согласно документации Mikrotik, режим &amp;ldquo;tls only&amp;rdquo; отправляет STARTTLS и прерывает сессию, если TLS не доступен на сервере. Проще говоря отправляет только в защищённом виде.&lt;br&gt;
+А &amp;ldquo;yes&amp;rdquo; отправляет STARTTLS и продолжает без TLS, если сервер отвечает, что TLS недоступен. Так как Яндекс работает только по защищенным каналам, во избежание проблем, указываем &amp;ldquo;tls only&amp;rdquo;.&lt;br&gt;
+From - Имя или адрес электронной почты, который будет отображаться в качестве получателя.&lt;br&gt;
+User - Имя пользователя, используемое для аутентификации на SMTP-сервере.&lt;br&gt;
+Password - Пароль, используемый для аутентификации на SMTP-сервере.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Bash скрипт для перезагрузки Asterisk</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/07/bash-skript-dlya-perezagruzki-asterisk/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/07/bash-skript-dlya-perezagruzki-asterisk/</guid>
+      
+      <description>&lt;p&gt;Скрипт используется телеграмм ботом для перезагрузки Asterisk на Linux сервере, но также его можно использовать отдельно или запускать по расписанию через Cron.&lt;/p&gt;
+&lt;h2 id=&#34;создание-скрипта&#34;&gt;Создание скрипта&lt;/h2&gt;
+&lt;p&gt;Создаём в нужном нам каталоге .sh файл, я буду это делать с помощью Midnight Commander, в текущем каталоге:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;‌mcedit asterisk_r.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Где мы вызываем редактор и указываем файл, если его нет он будет создан.&lt;/p&gt;
+&lt;p&gt;Далее в открывшемся файле указываем интерпретатор bash в первой строке, в следующей строке пишем наш скрипт. Вызываем консоль Asterisk из командной строки операционной системы и посылаем команду &amp;ldquo;изящной&amp;rdquo;[mfn]Перезагружает Asterisk по завершению всех текущих вызовов, блокирует совершение новых звонков.[/mfn] перезагрузки.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

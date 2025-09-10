@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Young Admin</title>
+    <link>http://localhost:1313/young-admin.org.ru/tags/linux/</link>
+    <description>Recent content in Linux on Young Admin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Wed, 29 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/young-admin.org.ru/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мониторинг остатка средств Selectel в Zabbix</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2025/01/monitoring-ostatka-sredstv-selectel-v-zabbix/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2025/01/monitoring-ostatka-sredstv-selectel-v-zabbix/</guid>
+      
+      <description>&lt;p&gt;Ставим на мониторинг баланс счета, с графиком изменения суммы счета и триггер при критическом остатке средств. При срабатывания триггера будем получать уведомления.&lt;/p&gt;
+&lt;h2 id=&#34;введение&#34;&gt;Введение&lt;/h2&gt;
+&lt;p&gt;Цель - держать на мониторинге баланс и быть уверенным, что денежные средства не закончились. Мониторинг будет висеть на хосте Zabbix сервера, через агента.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Установим на Zabbix сервере - jq, если он ещё не установлен, для работы с API&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Создадим bash скрипт для отправки запроса и обработки полученных данных&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Ускорение архивирования бэкапов</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2023/10/uskorenie-arhivirovaniya-bekapov/</link>
+      <pubDate>Mon, 16 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2023/10/uskorenie-arhivirovaniya-bekapov/</guid>
+      
+      <description>&lt;p&gt;Создание бэкапов с помощью tar.gz начало занимать очень много времени, так как оно использует только одно ядро процессора. Чтобы ускорить этот процесс, можно воспользоваться архиватором pigz. Это многопоточная реализация gzip, как написано на &lt;a href=&#34;https://zlib.net/pigz/&#34;&gt;сайте&lt;/a&gt; &amp;ldquo;полно-функциональная замена gzip&amp;rdquo;, что должно давать полную совместимость.&lt;/p&gt;
+&lt;p&gt;Допустим у нас есть некий bash скрипт (или иное) бэкапа, файлов, базы данных и другого на сервере. Чтобы работать с pigz, нужно для начала установить. Он есть в официальных репозиториях, дополнительно ничего подключать не нужно:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Проверка и перезагрузка конфигурационных файлов Apache</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/05/proverka-i-perezagruzka-konfiguraczionnyh-fajlov-apache/</guid>
+      
+      <description>&lt;p&gt;Для того чтобы проверить конфигурационные файлы на корректность и не перезапускать весь Apache сервер, чтобы применить настройки конфигурации, достаточно выполнить следующие действия.&lt;br&gt;
+Сначала запустим &lt;a href=&#34;https://httpd.apache.org/docs/2.4/programs/apachectl.html&#34;&gt;ситаксический тест&lt;/a&gt; файла конфигурации, он нам сообщит либо что всё ОК, что мы верно написали конфиг, либо сообщит подробную информацию о конкретной ошибке.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apachectl configtest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Если команда нам сообщила:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://young-admin.org.ru/wp-content/uploads/2022/05/apachectl-configtest.png&#34;&gt;&lt;img src=&#34;images/apachectl-configtest.png&#34; alt=&#34;syntax ok&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;То, перезагружаем (перечитываем) конфиги, для их применения.&lt;br&gt;
+Для перезагрузки конфигов Centos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service httpd reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Debian/Ubuntu:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;service apache2 reload
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Установка и настройка fail2ban</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</link>
+      <pubDate>Wed, 18 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2022/05/ustanovka-i-nastrojka-fail2ban/</guid>
+      
+      <description>&lt;p&gt;Установим и настроим fail2ban для базовой защиты SSH на Debian 11 bullseye. Я буду ставить fail2ban на свежеустановленную систему.&lt;br&gt;
+Настройка для &lt;a href=&#34;https://young-admin.org.ru/zapusk-fail2ban-v-debian-12-dlya-ssh/&#34;&gt;Debian 12&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;установка-fail2ban-и-iptables&#34;&gt;Установка fail2ban и iptables&lt;/h2&gt;
+&lt;p&gt;Перед установкой программ произведём обновление информации о пакетах и зависимостях в подключенных репозиториях:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Далее устанавливаем сам fail2ban:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#или с ключом (параметром) -y, для установки без запросов подтверждения&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;apt-get install -y fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;На вопрос хотим ли мы продолжить отвечам y:&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Как узнать версию Linux</title>
+      <link>http://localhost:1313/young-admin.org.ru/posts/2021/08/kak-uznat-versiyu-linux/</link>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/young-admin.org.ru/posts/2021/08/kak-uznat-versiyu-linux/</guid>
+      
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/*-release
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
