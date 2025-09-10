@@ -5,7 +5,6 @@ theme = "hugo-blog-awesome"
 enableEmoji = true
 
 [params]
-  description = "Трелалело тралала"
   toc = true
   tocLevels = 6
   goToTop = true
